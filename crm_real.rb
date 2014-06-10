@@ -12,12 +12,17 @@ end
 
 # View all contacts.
 get "/contacts" do
-	# @contacts = []
-	# @contacts << Contact.new("Julie", "Hache", "julie@bitmakerlabs.com", "Instructor")
 	erb :contacts
 end
 
 # Add a new contact.
 get "/contacts/new" do
 	 erb :new_contact
+end
+
+post "/contacts" do
+	new_contact = Contact.new(params[:first_name], params[:last_name], 
+		params[:email], params[:note])
+	@@rolodex.add_contact(new_contact)
+	redirect to("/contacts")
 end
