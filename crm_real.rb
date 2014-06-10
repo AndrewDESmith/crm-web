@@ -8,6 +8,8 @@ end
 
 # View all contacts.
 get "/contacts" do
+	@contacts = []
+	@contacts << Contact.new("Julie", "Hache", "julie@bitmakerlabs.com", "Instructor")
 	erb :contacts
 end
 
