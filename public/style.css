@@ -1,0 +1,85 @@
+a:hover {
+	background-color: black;
+	color: white;
+}
+
+body {
+	background: url("stockvault_vintage_paper.jpg")repeat;
+	height: 100%;
+}
+
+br {   
+	content: "A" !important;
+  display: block !important;
+  margin-bottom: 0.3em !important;
+}
+
+hr.style-eight {
+	padding: 0;
+	border: none;
+	border-top: medium double black;
+	color: black;
+	text-align: center;
+}
+
+input[type="submit"] {
+	font-family: 'Special Elite', cursive, sans-serif;
+	font-size: 1.5em;
+	background: url("stockvault_vintage_paper.jpg");
+	padding: 0.2em;
+	position: relative;
+	text-align: center;
+}
+
+input[type="text"] {
+	font-family: 'Marck Script', cursive, serif, sans-serif;
+}
+
+
+html {
+	height: 97%;
+}
+
+ul {
+	font-family: 'Marck Script', cursive, serif, sans-serif;
+}
+
+
+.text_input {
+	position: relative;
+	float: right;
+}
+
+#main {
+	float: right;
+	text-align: left;
+	margin: 0px;
+	width: 65%;
+	position: relative;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+}
+
+#main_menu, .label, h1, footer {
+	font-family: 'Special Elite', cursive, sans-serif;
+}
+
+#sidebar {
+	float: left;
+	text-align: left;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	width: 25%;
+	position: relative;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+
+footer {
+	position: absolute;
+	bottom: 10px;
+}

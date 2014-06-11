@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
 <body>
 	<h1>All Contacts</h1>
+	<hr class="style-eight"></hr>
 	<ul>
 		<% @@rolodex.contacts.each do |contact| %>
 		<li><%= contact.first_name %> <%= contact.last_name %> 
@@ -11,4 +8,3 @@
 		<% end %>
 	</ul>
 </body>
-</html>

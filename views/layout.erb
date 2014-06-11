@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link href='http://fonts.googleapis.com/css?family=Marck+Script|Special+Elite' rel='stylesheet' type='text/css'>
 		<meta charset="UTF-8" />
-		<title></title>
+		<title>Andrew Smith's CRM Application</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
 	</head>
 	<body>
-		<header></header>
-		<%= yield %>
-		<footer></footer>
+		<div id="sidebar">
+			<header><h1>Welcome to Your CRM</h1></header>
+			<hr class="style-eight"></hr>
+			<nav>	
+				<p id="main_menu">Main menu</p>
+				<ul>
+					<li><a href="/contacts">View all contacts</a></li>
+					<li><a href="/contacts/new">Add a new contact</a></li>
+					<li><a href="/contacts/:id">View a contact</a></li>
+					<li><a href="/contacts/:id/edit">Modify an existing contact</a></li>
+				</ul>
+			</nav>
+			<footer>Created by Andrew Smith, June 10-11 2014</footer>
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
 	</body>
 </html>
