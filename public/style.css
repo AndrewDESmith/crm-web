@@ -62,8 +62,8 @@ ul {
 	height: 100%;
 }
 
-#main_menu, .label, h1, footer {
-	font-family: 'Special Elite', cursive, sans-serif;
+#main_menu, .label, h1, footer, .menu-items {
+	font-family: 'Special Elite', serif, sans-serif;
 }
 
 #sidebar {
