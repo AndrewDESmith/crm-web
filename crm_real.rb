@@ -1,10 +1,28 @@
 require "sinatra"
-require_relative "contact"
 require_relative "rolodex"
 require "data_mapper"
 
-DataMapper.setup(:deafault, "sqlite3:database.sqlite3")
 # sqlite3:the database we are using, database.sqlite3 the file.
+DataMapper.setup(:default, "sqlite3:database.sqlite3")
+
+class Contact
+	# A module is a just file with a bunch of methods in it.
+	include DataMapper::Resource
+
+	# Properties automatically set up getter and setter methods.
+	# Serial represents an Integer that automatically increments.
+	property :id, Serial
+	property :first_name, String
+	property :last_name, String
+	property :email, String
+	property :note, String
+end
+
+# .finalize used after the DataMapper resources are defined.
+DataMapper.finalize
+# .auto_upgrade takes care of effecting any changes to the
+# underlying structure of the tables or columns.
+DataMapper.auto_upgrade!
 
 # To enable access to Rolodex from each action in Sinatra.
 @@rolodex = Rolodex.new
