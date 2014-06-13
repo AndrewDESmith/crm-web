@@ -34,15 +34,26 @@ end
 
 # View all contacts.
 get "/contacts" do
+	@contacts = Contact.all
 	erb :contacts
 end
 
 post "/contacts" do
-	new_contact = Contact.new(params[:first_name], params[:last_name], 
-		params[:email], params[:note])
-	@@rolodex.add_contact(new_contact)
-	redirect to("/contacts")
+	contact = Contact.create(
+		:first_name => params[:first_name],
+		:last_name => params[:last_name],
+		:email => params[:email],
+		:note => params[:note]
+	)
+	redirect to ("/contacts")
 end
+
+# post "/contacts" do
+# 	new_contact = Contact.new(params[:first_name], params[:last_name], 
+# 		params[:email], params[:note])
+# 	@@rolodex.add_contact(new_contact)
+# 	redirect to("/contacts")
+# end
 
 # Add a new contact.
 get "/contacts/new" do
@@ -69,14 +80,23 @@ get "/contacts/edit" do
 	# end
 end
 
-get "/contacts/:id" do
-	@contact = @@rolodex.find_contact(params[:id].to_i)
+get "contacts/:id" do
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
 		erb :show_contact
 	else
 		raise Sinatra::NotFound
 	end
 end
+
+# get "/contacts/:id" do
+# 	@contact = @@rolodex.find_contact(params[:id].to_i)
+# 	if @contact
+# 		erb :show_contact
+# 	else
+# 		raise Sinatra::NotFound
+# 	end
+# end
 
 put "/contacts/:id" do
 	@contact = @@rolodex.find_contact(params[:id].to_i)

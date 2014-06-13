@@ -2,13 +2,15 @@
 	<h1>All Contacts</h1>
 	<hr class="style-eight"></hr>
 	<ul>
-		<% @@rolodex.contacts.each do |contact| %>
-		<li><%= contact.first_name %> <%= contact.last_name %> 
-			<%= contact.email %> <%= contact.note %> 	
-			<form method="delete">
-				<input type="submit" name="delete_button" value="Delete Contact" id="delete_contact" />
-			</form>
+		<% @contacts.each do |contact| %>
+		<li>
+			<a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %> 	
+			</a>
 		</li>
 		<% end %>
 	</ul>
 </body>
+
+<!-- 	<form method="delete">
+		<input type="submit" name="delete_button" value="Delete Contact" id="delete_contact" />
+	</form> -->
