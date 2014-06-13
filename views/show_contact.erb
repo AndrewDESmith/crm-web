@@ -1,10 +1,6 @@
-<% if @contact %>
-	<h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
-	<p><strong>Email:</strong><%= @contact.email %></p>
-	<p><strong>Note:</strong></p>
+<h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
+	<p><strong>Email:  </strong><%= @contact.email %></p>
+	<p><strong>Note:  </strong></p>
 	<p><%= @contact.note %></p>
-	<form action="/contacts/<%= @contact.id %>" method="post">
-	</form>
-<% else %>
-	That contact does not exist.
-<% end %>
+	<!-- <form action="/contacts/<%= @contact.id %>" method="post">
+	</form> -->

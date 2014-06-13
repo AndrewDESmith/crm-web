@@ -43,17 +43,33 @@ post "/contacts" do
 		:first_name => params[:first_name],
 		:last_name => params[:last_name],
 		:email => params[:email],
-		:note => params[:note]
+		:note => params[:note],
 	)
 	redirect to ("/contacts")
 end
 
-# post "/contacts" do
-# 	new_contact = Contact.new(params[:first_name], params[:last_name], 
-# 		params[:email], params[:note])
-# 	@@rolodex.add_contact(new_contact)
-# 	redirect to("/contacts")
-# end
+get "/contacts/:id" do
+	@contact = Contact.get(params[:id].to_i)
+	if @contact
+		erb :show_contact
+	else
+		raise Sinatra::NotFound
+	end
+end
+
+put "/contacts/:id" do
+	@contact = @@rolodex.find_contact(params[:id].to_i)
+	if @contact
+		@contact.first_name = params[:first_name]
+		@contact.last_name = params[:last_name]
+		@contact.email = params[:email]
+		@contact.note = params[:note]
+
+		redirect to("/contacts")
+	else
+		raise Sinatra::NotFound
+	end
+end
 
 # Add a new contact.
 get "/contacts/new" do
@@ -78,38 +94,6 @@ get "/contacts/edit" do
 	# else
 	# 	raise Sinatra::NotFound
 	# end
-end
-
-get "contacts/:id" do
-	@contact = Contact.get(params[:id].to_i)
-	if @contact
-		erb :show_contact
-	else
-		raise Sinatra::NotFound
-	end
-end
-
-# get "/contacts/:id" do
-# 	@contact = @@rolodex.find_contact(params[:id].to_i)
-# 	if @contact
-# 		erb :show_contact
-# 	else
-# 		raise Sinatra::NotFound
-# 	end
-# end
-
-put "/contacts/:id" do
-	@contact = @@rolodex.find_contact(params[:id].to_i)
-	if @contact
-		@contact.first_name = params[:first_name]
-		@contact.last_name = params[:last_name]
-		@contact.email = params[:email]
-		@contact.note = params[:note]
-
-		redirect to("/contacts")
-	else
-		raise Sinatra::NotFound
-	end
 end
 
 delete "/contacts/:id" do
