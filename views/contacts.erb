@@ -4,7 +4,11 @@
 	<ul>
 		<% @@rolodex.contacts.each do |contact| %>
 		<li><%= contact.first_name %> <%= contact.last_name %> 
-			<%= contact.email %> <%= contact.note %></li>
+			<%= contact.email %> <%= contact.note %> 	
+			<form method="delete">
+				<input type="submit" name="delete_button" value="Delete Contact" id="delete_contact" />
+			</form>
+		</li>
 		<% end %>
 	</ul>
 </body>

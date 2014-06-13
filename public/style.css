@@ -50,6 +50,10 @@ ul {
 	float: right;
 }
 
+#delete_contact {
+	font-size: 1rem;
+}
+
 #main {
 	float: right;
 	text-align: left;
