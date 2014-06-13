@@ -1,6 +1,10 @@
 require "sinatra"
 require_relative "contact"
 require_relative "rolodex"
+require "data_mapper"
+
+DataMapper.setup(:deafault, "sqlite3:database.sqlite3")
+# sqlite3:the database we are using, database.sqlite3 the file.
 
 # To enable access to Rolodex from each action in Sinatra.
 @@rolodex = Rolodex.new
@@ -37,6 +41,16 @@ post "/contacts/do_search" do
 	erb :show_contact
 end
 
+get "/contacts/edit" do
+	erb :show_contact
+	# @contact = @@rolodex.find_contact(params[:id].to_i)
+	# if @contact
+	# 	erb :edit_contact
+	# else
+	# 	raise Sinatra::NotFound
+	# end
+end
+
 get "/contacts/:id" do
 	@contact = @@rolodex.find_contact(params[:id].to_i)
 	if @contact
@@ -65,15 +79,6 @@ delete "/contacts/:id" do
 	if @contact
 		@@rolodex.remove_contact(@contact)
 		redirect to("/contacts")
-	else
-		raise Sinatra::NotFound
-	end
-end
-
-get "/contacts/edit" do
-	@contact = @@rolodex.find_contact(params[:id].to_i)
-	if @contact
-		erb :edit_contact
 	else
 		raise Sinatra::NotFound
 	end
