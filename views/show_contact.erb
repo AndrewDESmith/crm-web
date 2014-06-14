@@ -1,9 +1,11 @@
 <h1 class="contact_details"><%= @contact.first_name %> <%= @contact.last_name %></h1>
+<hr class="style-eight"></hr>
 	<p class="contact_details"><strong>Email:  </strong><%= @contact.email %></p>
 	<p class="contact_details"><strong>Note:  </strong><%= @contact.note %></p>
 	<br></br>
-	<form action="/contacts/<%= @contact.id %>/edit" method="link">
-		<input type="submit" name="submit" value="Edit Contact" />
+	<p></p>
+	<form action="/contacts/<%= @contact.id %>/edit" method="link" >
+		<input type="submit" name="submit" value="Edit This Contact" />
 	</form>
 	<br></br>
 	<form action="/contacts/<%= @contact.id %>" method="post">
@@ -12,5 +14,5 @@
 		<input type="hidden" name="last_name" value=" <%= @contact.last_name %>" />
 		<input type="hidden" name="email" value=" <%= @contact.email %>" />
 		<input type="hidden" name="note" value=" <%= @contact.note %>" />
-		<input type="submit" name="submit" value="Delete Contact" />
+		<input type="submit" name="submit" value="Delete This Contact" />
 	</form>

@@ -1,7 +1,7 @@
 <body>
 	<h1>All Contacts</h1>
 	<hr class="style-eight"></hr>
-	<ul>
+	<ul id="all_contacts_list">
 		<% @contacts.each do |contact| %>
 		<li>
 			<a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %> 	

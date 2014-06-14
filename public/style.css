@@ -32,16 +32,35 @@ html {
 }
 
 input[type="submit"] {
-	font-family: 'Special Elite', cursive, sans-serif;
-	font-size: 1.5em;
 	background: url("stockvault_vintage_paper.jpg");
-	padding: 0.2em;
+	border: 1px solid black;
+	font-family: 'Special Elite', cursive, sans-serif;
+	font-size: 1rem;
+	padding: 0.5em 0.2em 0.2em 0.1em;
 	position: relative;
 	text-align: center;
 }
 
+input[type="submit"]:hover{
+	background-color: black;
+	color: white;
+}
+
 input[type="text"] {
+	display: inline-block;
 	font-family: 'Marck Script', cursive, serif, sans-serif;
+	font-size: 1rem;
+	width: 90%;
+}
+
+p {
+	margin: 1rem 0rem 0.1rem 0rem;
+}
+
+textarea {
+	font-family: 'Marck Script', cursive, serif, sans-serif;
+	font-size: 1rem;
+	width: 90%;
 }
 
 ul {
@@ -55,6 +74,10 @@ ul {
 .text_input {
 	position: relative;
 	float: right;
+}
+
+#all_contacts_list {
+	font-size: 1.25rem;
 }
 
 #delete_contact {
@@ -73,6 +96,10 @@ ul {
 	height: 100%;
 }
 
+#main_menu {
+	font-size: 1.35rem;
+}
+
 #main_menu, .edit_delete, .label, h1, footer, .menu-items {
 	font-family: 'Special Elite', serif, sans-serif;
 }
@@ -88,4 +115,10 @@ ul {
 	top: 0;
 	left: 0;
 	bottom: 0;
+}
+
+#ul_main_menu {
+	font-size: 1.25rem;
+	list-style: none;
+	margin: 2rem 0rem;
 }
