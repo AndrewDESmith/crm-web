@@ -14,12 +14,21 @@ br {
   margin-bottom: 0.3em !important;
 }
 
+footer {
+	position: absolute;
+	bottom: 10px;
+}
+
 hr.style-eight {
 	padding: 0;
 	border: none;
 	border-top: medium double black;
 	color: black;
 	text-align: center;
+}
+
+html {
+	height: 97%;
 }
 
 input[type="submit"] {
@@ -35,15 +44,13 @@ input[type="text"] {
 	font-family: 'Marck Script', cursive, serif, sans-serif;
 }
 
-
-html {
-	height: 97%;
-}
-
 ul {
 	font-family: 'Marck Script', cursive, serif, sans-serif;
 }
 
+.contact_details {
+	font-family: 'Mark Script', cursive, serif, sans-serif;
+}
 
 .text_input {
 	position: relative;
@@ -66,7 +73,7 @@ ul {
 	height: 100%;
 }
 
-#main_menu, .label, h1, footer, .menu-items {
+#main_menu, .edit_delete, .label, h1, footer, .menu-items {
 	font-family: 'Special Elite', serif, sans-serif;
 }
 
@@ -81,9 +88,4 @@ ul {
 	top: 0;
 	left: 0;
 	bottom: 0;
-}
-
-footer {
-	position: absolute;
-	bottom: 10px;
 }
